@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>عمورية الثانوية | بطاقة تهنئة اليوم الوطني</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans+Arabic">
+</head>
+<body onload="canvas()">
+    <img src="logo.jpg" alt="logo" class="logo">
+    <h1 class="title">عمورية الثانوية<br> بطاقة تهنئة اليوم الوطني ٩٣</h1>
+    
+    
+    <div class="main">
+        <div class="canvas-div">
+        <canvas id="canvas" class="canvas" width="1080" height="1080"></canvas>
+        </div>
+        <div class="name">
+            <input class="name-input" id="name-input" placeholder="أدخل اسمك">
+            <a class="download" onclick="fillText()">تحميل</a>
+            <h4>برمجة وتصميم الطالب براء ابوحطب<br>فصول موهوبين عمورية الثانوية</h4>
+        </div>
+    </div>
+    <img src="card.png" id="card" class="card">
+</body>
+<script>
+    function canvas(){
+    let myFont = new FontFace(
+    "IBM Plex Sans Arabic",
+    "url(https://fonts.gstatic.com/s/ibmplexsansarabic/v12/Qw3CZRtWPQCuHme67tEYUIx3Kh0PHR9N6Ys43PWrfQ.woff2)"
+    );
+
+    myFont.load().then((font) => {
+    document.fonts.add(font);
+    console.log("Font loaded");
+    var ctx = image.getContext("2d");
+    ctx.fillStyle = "#292929";
+    ctx.font = "30px Pangolin";
+    ctx.fillText("A chicken", 0, 30);
+    })
+    
+    var c = document.getElementById("canvas");
+    var ctx = c.getContext("2d");
+    var img = document.getElementById("card");
+    ctx.drawImage(img, 0, 0);
+    }
+
+    function fillText(){
+        var c = document.getElementById("canvas");
+        var ctx = c.getContext("2d");
+        var text = document.getElementById("name-input").value;
+        ctx.font = "40px IBM Plex Sans Arabic";
+        var textWidth = ctx.measureText(text).width;
+        var x = (c.width + textWidth) / 2;
+        ctx.fillText(text, x, 920);
+
+        let canvasUrl = c.toDataURL("image/jpeg", 0.5);
+        console.log(canvasUrl);
+        const createEl = document.createElement('a');
+        createEl.href = canvasUrl;
+        createEl.download = "بطاقة اليوم الوطني 93 عمورية";
+        createEl.click();
+        createEl.remove();
+    }
+</script>
+</html>
