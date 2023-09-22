@@ -11,7 +11,7 @@ body{
 }
 
 .title{
-    font-size: 52px;
+    font-size: 72px;
     text-align: center;
 }
 
@@ -40,7 +40,7 @@ body{
     border-radius: 20px;
     cursor: pointer;
     margin: 5px;
-    font-size: 30px;
+    font-size: 50px;
 }
 
 .name-input{
@@ -49,14 +49,14 @@ body{
     padding: 10px 10px;
     box-sizing: border-box;
     font-family: 'IBM Plex Sans Arabic';
-    font-size: 30px;
+    font-size: 50px;
     border-radius: 10px;
     border: 1px solid #ccc;
 }
 
 h4{
     text-align: center;
-    font-size: 25px;
+    font-size: 45px;
 }
 
 .card{
