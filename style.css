@@ -15,23 +15,7 @@ body{
     text-align: center;
 }
 
-@media only screen and (min-width: 768px) {
-    .main {
-        display: flex;
-        justify-content: space-around;
-        flex-wrap: nowrap;
-        padding: 2%;
-    }
 
-    .canvas-div {
-        width: 50%;
-        display: flex;
-        justify-content: center;
-    }
-    .canvas{
-        width: 100%;
-    }
-}
 @media only screen and (max-width: 767px){
     .canvas-div{
         display: flex;
